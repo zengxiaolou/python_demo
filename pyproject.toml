@@ -4,13 +4,19 @@ version = "0.1.0"
 description = ""
 authors = ["zengxiaolou <44358506+zengxiaolou@users.noreply.github.com>"]
 
+[[tool.poetry.source]]
+name = "douban"
+url = "https://pypi.douban.com/simple/"
+
+
 [tool.poetry.dependencies]
 python = "^3.8"
 apscheduler = "^3.6.3"
+elasticsearch = "^7.8.0"
+requests = "^2.24.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 
 [build-system]
-requires = ["poetry>=0.12"]
 build-backend = "poetry.masonry.api"
