@@ -12,7 +12,7 @@ import requests
 
 url = "https://yys.163.com/media/picture.html"
 html = requests.get(url)
-pattern = re.compile(r'<a class="target" href="(.*?)" target="_blank">2732x2048</a>')
+pattern = re.compile(r'<a class="target" href="(.*?)" target="_blank">1920x1080</a>')
 res = pattern.findall(html.text)
 path = Path(__file__).parent
 print(path)
@@ -22,6 +22,6 @@ for i in res:
     img_path = str(path) + '/BGI/' + str(j) + '.png'
     res = requests.get(i)
     print("starting")
-    with open(img_path, 'ab') as f:
+    with open(img_path, 'ab+') as f:
         f.write(res.content)
         f.close()
