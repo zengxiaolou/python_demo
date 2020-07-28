@@ -8,11 +8,11 @@ INSTRUCTIONS:   文件简介
 
 
 class SuitableSum(object):
-    def __init__(self, nums, target):
+    def __init__(self, nums: list, target: int):
         self.nums = nums
         self.target = target
 
-    def suitable_sum(self):
+    def suitable_sum(self) -> tuple:
         for i in range(0, len(self.nums)):
             if i < self.target:
                 for j in range(i+1, len(self.nums)):
